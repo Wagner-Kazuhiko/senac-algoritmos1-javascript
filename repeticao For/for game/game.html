@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de viado</title>
+</head>
+<body>
+    <header>
+        <h1>Teste sua masculinidade</h1>
+    </header>
+    <main>
+        <p>
+            <button class="botao" onclick="clicar()">Verificador de viadagem</button>
+        </p>
+        <p>Clique no botão acima para validar a sua masculinidade</p>
+    </main>
+    
+    <script>
+        let num;
+        let chute;
+        
+
+        function clicar() {
+            num = Math.floor (Math.random() * 10)
+
+            do {
+                chute = document.querySelector('.botao').onclick = prompt('Insira um número entre 0 e 9')
+            }
+            while (chute < 0 || chute > 9)
+
+            for (let i = 1; chute != num; i ++) {
+                do {
+                chute = document.querySelector('.botao').onclick = prompt('Insira um número entre 0 e 9')
+            }
+            while (chute < 0 || chute > 9)
+            }
+
+                alert(`Vc acertou na tentativa ${chute}! És um Grand viadão`)
+            
+}
+    </script>
+</body>
+</html>

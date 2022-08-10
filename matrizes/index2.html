@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notas escolares</title>
+</head>
+<body>
+    <div class="tabela">
+
+    </div>
+    <script>
+
+
+        var media = [[],[],[],[],[] ]
+        var situacao = [[],[],[],[],[]]
+
+        media[0][0] = 'MÉDIA'
+        media[1][0] = 'Português'
+        media[2][0] = 'Matemática'
+        media[3][0] = 'Física'
+        media[4][0] = 'Biologia'
+
+        situacao[0][0] = 'SITUAÇÃO'
+        situacao[1][0] = 'Português'
+        situacao[2][0] = 'Matemática'
+        situacao[3][0] = 'Física'
+        situacao[4][0] = 'Biologia'
+
+        for(linha = 0; linha < media.length; linha ++) {
+            for(coluna = 1; coluna < 11; coluna ++) {
+                if(linha == 0) {
+                    media[linha][coluna] = prompt('Insira um nome')
+                    situacao[linha][coluna] = media[linha][coluna]
+                }
+                else {
+                    media[linha][coluna] = prompt('Insira a média de '+ media[linha][0] + ' do aluno ' + media[0][coluna])
+                        if(media[linha][coluna] < 6) {
+                            situacao[linha][coluna] = 'REPROVADO'
+                        }
+                        else {
+                            situacao[linha][coluna] = 'APROVADO'
+                        }
+                }
+            }
+        }
+
+        for (linha = 0; linha < situacao.length; linha++) {
+            for(coluna = 0; coluna < 11; coluna ++) {
+                let tabela = document.querySelector('.tabela')
+                tabela.innerHTML = `<p>${situacao[linha][coluna]}</p>`
+            }
+            alert("\n")
+        }
+
+    </script>
+</body>
+</html>
